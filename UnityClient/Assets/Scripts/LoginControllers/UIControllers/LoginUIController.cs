@@ -8,6 +8,7 @@ public class LoginUIController : MonoBehaviour
     private bool isLoggedIn;
     [SerializeField] private GameObject loginPanel;
     [SerializeField] private GameObject mainPanel;
+    [SerializeField] private Button CloseButton;
     [SerializeField] private Button LoginButton ;
 
     public void Login()
@@ -32,7 +33,6 @@ public class LoginUIController : MonoBehaviour
         return isLoggedIn;
     }
 
-    
 
     void Start()
     {
@@ -40,10 +40,11 @@ public class LoginUIController : MonoBehaviour
         mainPanel.SetActive(false);
         isLoggedIn = false;
         LoginButton.onClick.AddListener(Login);
+        CloseButton.onClick.AddListener(() => {
+            loginPanel.SetActive(false);
+            mainPanel.SetActive(true);
+        
+        });
     }
 
-    void Update()
-    {
-        
-    }
 }
