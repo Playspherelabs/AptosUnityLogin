@@ -78,11 +78,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or suggestions, feel free to open an issue or reach out to the project maintainers.
 
-## Acknowledgements
-
-- Unity Community
-- Aptos Blockchain Team
-
 ---
 
 Enhance your Unity applications with secure and seamless authentication using AptosUnityLogin. Join us in building a more secure and user-friendly web!
