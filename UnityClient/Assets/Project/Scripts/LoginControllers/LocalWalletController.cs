@@ -6,11 +6,13 @@ using Aptos.Unity.Sample.UI;
 using TMPro;
 using UnityEngine;
 
+
+namespace AptosUnityLogin.AuthController{
+
 public class LocalWalletController : MonoBehaviour
 {
-    private TMP_InputField createdMnemonicInputField;
 
-    public void OnCreateWalletClicked()
+    public void OnCreateWalletClicked(TMP_InputField createdMnemonicInputField)
         {
             if (AptosUILink.Instance.CreateNewWallet())
             {
@@ -49,4 +51,5 @@ public class LocalWalletController : MonoBehaviour
                 ToggleNotification(ResponseInfo.Status.Failed, "Fail to Import the Wallet");
             }
         }
+}
 }

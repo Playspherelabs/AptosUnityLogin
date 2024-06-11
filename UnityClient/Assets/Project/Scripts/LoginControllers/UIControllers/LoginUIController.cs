@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+namespace AptosUnityLogin.AuthController{
+
 public class LoginUIController : MonoBehaviour
 {
     private bool isLoggedIn;
     [SerializeField] private GameObject loginPanel;
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private Button CloseButton;
-    [SerializeField] private Button LoginButton ;
+    [SerializeField] private Button LoginButton;
 
     public void Login()
     {
-        if(isLoggedIn)
-            return;
-        
+
         isLoggedIn = true;
         loginPanel.SetActive(true);
         mainPanel.SetActive(false);
@@ -47,4 +48,5 @@ public class LoginUIController : MonoBehaviour
         });
     }
 
+}
 }

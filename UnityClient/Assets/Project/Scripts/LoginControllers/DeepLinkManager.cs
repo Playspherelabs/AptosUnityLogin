@@ -6,6 +6,10 @@ using System.Web;
 using UnityEngine;
 using UnityEngine.Events;
 
+namespace AptosUnityLogin.DeepLink
+{
+    
+
 public class DeepLinkManager : MonoBehaviour
 {
     public static DeepLinkManager Instance { get; private set; }
@@ -23,8 +27,7 @@ public class DeepLinkManager : MonoBehaviour
                 // Cold start and Application.absoluteURL not null so process Deep Link.
                 onDeepLinkActivated(Application.absoluteURL);
             }
-            // Initialize DeepLink Manager global variable.
-            else deeplinkURL = "[none]";
+            // else deeplinkURL = "[none]";
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -36,10 +39,11 @@ public class DeepLinkManager : MonoBehaviour
     private void onDeepLinkActivated(string url){
  try
         {
-            Uri uri = new Uri(url);
-            NameValueCollection queryParams = HttpUtility.ParseQueryString(uri.Query);
+            // Uri uri = new Uri(url);
+            // NameValueCollection queryParams = HttpUtility.ParseQueryString(uri.Query);
+                Debug.Log($"Deep Link URL: {url}");
 
-            print(uri);
+            OnLoginActivated?.Invoke(url);
         }
         catch (Exception ex)
         {
@@ -48,4 +52,5 @@ public class DeepLinkManager : MonoBehaviour
         }
     }
 
+}
 }
